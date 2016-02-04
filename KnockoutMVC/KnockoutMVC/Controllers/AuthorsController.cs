@@ -1,17 +1,13 @@
-﻿using System.Data;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Web;
 using System.Web.Mvc;
 using KnockoutMVC.DAL;
 using KnockoutMVC.Models;
-using System.Web.ModelBinding;
-using System.Linq.Dynamic;
-using System.Collections.Generic;
-
-
-
-
 
 namespace KnockoutMVC.Controllers
 {
@@ -20,15 +16,10 @@ namespace KnockoutMVC.Controllers
         private BookContext db = new BookContext();
 
         // GET: Authors
-        public ActionResult Index([Form] QueryOptions queryOptions)
+        public ActionResult Index()
         {
-            var authors = db.Authors.OrderBy(queryOptions.Sort);
-
-            ViewBag.QueryOptions = queryOptions;
-
             return View(db.Authors.ToList());
         }
-        
 
         // GET: Authors/Details/5
         public ActionResult Details(int? id)

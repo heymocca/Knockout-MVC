@@ -5,48 +5,18 @@ using System.Web;
 using Newtonsoft.Json;
 using System.Web.Mvc;
 using KnockoutMVC.DAL;
-using KnockoutMVC.Models;
-using System.Web.Mvc.Html;
 
-public static class HtmlHelperExtensions
-{
-    public static HtmlString HtmlConvertToJson(this HtmlHelper htmlHelper, object model)
+
+    public static class HtmlHelperExtensions
     {
-        var settings = new JsonSerializerSettings
+        public static HtmlString HtmlConvertToJson(this HtmlHelper htmlHelper, object model)
         {
-            ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
-            Formatting = Formatting.Indented
-        };
-        return new HtmlString(JsonConvert.SerializeObject(model, settings));
-
-    }
-
-    public static MvcHtmlString BuildSortableLink(this HtmlHelper htmlHelper, string fieldName, string actionName, string sortField, QueryOptions queryOptions)
-    {
-        var urlHelper = new UrlHelper(htmlHelper.ViewContext.RequestContext);
-        var isCurrentSortField = queryOptions.SortField == sortField;
-        return new MvcHtmlString(string.Format("<a href=\"{0}\">{1} {2}</a>", urlHelper.Action(actionName,
-            new
+            var settings = new JsonSerializerSettings
             {
-                SortField = sortField,
-                SortOrder = (isCurrentSortField
-                    && queryOptions.SortOrder == SortOrder.ASC)
-                    ? SortOrder.DESC : SortOrder.ASC
-            }), fieldName, BuildSortIcon(isCurrentSortField, queryOptions)));
-    }
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+                Formatting = Formatting.Indented
+            };
 
-    private static string BuildSortIcon(bool isCurrentSortField, QueryOptions queryOptions)
-    {
-        string sortIcon = "sort";
-        if (isCurrentSortField)
-        {
-            sortIcon += "-by-alphabet";
-            if (queryOptions.SortOrder == SortOrder.DESC)
-                sortIcon += "-alt";
+            return new HtmlString(JsonConvert.SerializeObject(model, settings));
         }
-        return string.Format("<span class=\"{0} {1}{2}\"></span>", "glyphicon", "glyphicon-", sortIcon);
     }
-}
-
-
-
