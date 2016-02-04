@@ -7,6 +7,7 @@ using KnockoutMVC.DAL;
 using KnockoutMVC.Models;
 using System.Web.ModelBinding;
 using System.Linq.Dynamic;
+using System;
 
 namespace KnockoutMVC.Controllers
 {
@@ -17,7 +18,14 @@ namespace KnockoutMVC.Controllers
         // GET: Authors
         public ActionResult Index([Form] QueryOptions queryOptions)
         {
-            var authors = db.Authors.OrderBy(queryOptions.Sort);
+            var start = (queryOptions.CurrentPage) * queryOptions.PageSize;
+
+            var authors = db.Authors.
+                OrderBy(queryOptions.Sort).
+                Skip(start).
+                Take(3);
+
+            queryOptions.TotalPages = (int)Math.Ceiling((double)db.Authors.Count() / queryOptions.PageSize);
 
             ViewBag.QueryOptions = queryOptions;
 
