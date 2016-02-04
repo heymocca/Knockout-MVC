@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Basic";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Hello: <span data-bind="text: name"></span></h3>
+
+@section scripts{
+    <script>
+        function ViewModel() {
+            this.name = "Mocca";
+        };
+
+        var viewModel = new ViewModel();
+
+        ko.applyBindings(viewModel);
+    </script>
+    }
+

@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="row" id="divAuthManage" style="margin-top:30px;">
+    <div class="col-md-6 col-sm-6 col-xs-6">
+        <form class="form-inline">
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-addon">User Name:</div>
+                    <input class="form-control" type="text" id="inputUserName" placeholder="User Name" />
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Add</button>
+        </form>
+          
+        <div id="divMessage" class="alert alert-warning" style="display:none"></div>
+        
+        <table class="table table-bordered table-hover" style="margin-top: 20px;">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>User Name</th>
+                    <th style="text-align:center">Edit</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <div class="col-sm-6 col-sm-6 col-xs-6">
+        <div class="panel panel-default">
+
+            <div class="panel-heading">
+                <h3 class="panel-title">Title</h3>
+                @*<label class="checkbox">
+                    <input type="checkbox" value="" />
+                </label>*@
+            </div>
+
+            <div class="panel-body">
+                @*<label class="checkbox-inline">
+                    <input type="checkbox" value="" />
+                </label>*@
+            </div>
+
+        </div>
+        <p class="text-right">
+            <button type="button" class="btn btn-default">Save</button>
+        </p>
+    </div>
+</div>
