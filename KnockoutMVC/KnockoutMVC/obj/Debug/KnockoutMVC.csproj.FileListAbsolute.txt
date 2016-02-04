@@ -63,3 +63,4 @@ F:\Practices\Knockout-MVC\KnockoutMVC\KnockoutMVC\bin\System.Net.Http.Formatting
 F:\Practices\Knockout-MVC\KnockoutMVC\KnockoutMVC\bin\System.Web.Http.xml
 F:\Practices\Knockout-MVC\KnockoutMVC\KnockoutMVC\bin\System.Web.Http.WebHost.xml
 F:\Practices\Knockout-MVC\KnockoutMVC\KnockoutMVC\bin\System.Net.Http.Formatting.xml
+F:\Practices\Knockout-MVC\KnockoutMVC\KnockoutMVC\bin\System.Linq.Dynamic.dll
