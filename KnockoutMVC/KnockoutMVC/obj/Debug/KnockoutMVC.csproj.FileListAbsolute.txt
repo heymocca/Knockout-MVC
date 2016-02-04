@@ -57,3 +57,9 @@ F:\Practices\Knockout-MVC\KnockoutMVC\KnockoutMVC\bin\EntityFramework.dll
 F:\Practices\Knockout-MVC\KnockoutMVC\KnockoutMVC\bin\EntityFramework.SqlServer.dll
 F:\Practices\Knockout-MVC\KnockoutMVC\KnockoutMVC\bin\EntityFramework.xml
 F:\Practices\Knockout-MVC\KnockoutMVC\KnockoutMVC\bin\EntityFramework.SqlServer.xml
+F:\Practices\Knockout-MVC\KnockoutMVC\KnockoutMVC\bin\System.Web.Http.dll
+F:\Practices\Knockout-MVC\KnockoutMVC\KnockoutMVC\bin\System.Web.Http.WebHost.dll
+F:\Practices\Knockout-MVC\KnockoutMVC\KnockoutMVC\bin\System.Net.Http.Formatting.dll
+F:\Practices\Knockout-MVC\KnockoutMVC\KnockoutMVC\bin\System.Web.Http.xml
+F:\Practices\Knockout-MVC\KnockoutMVC\KnockoutMVC\bin\System.Web.Http.WebHost.xml
+F:\Practices\Knockout-MVC\KnockoutMVC\KnockoutMVC\bin\System.Net.Http.Formatting.xml
