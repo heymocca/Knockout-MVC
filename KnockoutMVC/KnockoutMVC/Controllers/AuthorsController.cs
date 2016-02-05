@@ -18,12 +18,12 @@ namespace KnockoutMVC.Controllers
         // GET: Authors
         public ActionResult Index([Form] QueryOptions queryOptions)
         {
-            var start = (queryOptions.CurrentPage) * queryOptions.PageSize;
+            var start = (queryOptions.CurrentPage -1 ) * queryOptions.PageSize;
 
             var authors = db.Authors.
                 OrderBy(queryOptions.Sort).
                 Skip(start).
-                Take(3);
+                Take(queryOptions.PageSize);
 
             queryOptions.TotalPages = (int)Math.Ceiling((double)db.Authors.Count() / queryOptions.PageSize);
 

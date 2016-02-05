@@ -1,19 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using Newtonsoft.Json;
-using KnockoutMVC.Models;
-
-namespace KnockoutMVC.Models
+﻿namespace KnockoutMVC.Models
 {
     public class QueryOptions
     {
         public QueryOptions()
         {
             CurrentPage = 1;
-            PageSize = 1;
+            PageSize = 4;
 
             SortField = "Id";
             SortOrder = SortOrder.ASC;

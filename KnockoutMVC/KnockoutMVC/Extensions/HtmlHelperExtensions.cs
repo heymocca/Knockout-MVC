@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Web;
 using Newtonsoft.Json;
 using System.Web.Mvc;
-using KnockoutMVC.DAL;
 using KnockoutMVC.Models;
 
 public static class HtmlHelperExtensions
@@ -74,13 +70,13 @@ public static class HtmlHelperExtensions
     private static string IsPreviousDisabled(QueryOptions queryOptions)
     {
         return (queryOptions.CurrentPage == 1)
-        ? "disabled" : string.Empty;
+        ? "invisible" : string.Empty;
     }
 
     private static string IsNextDisabled(QueryOptions queryOptions)
     {
         return (queryOptions.CurrentPage == queryOptions.TotalPages)
-        ? "disabled" : string.Empty;
+        ? "invisible" : string.Empty;
     }
 
     private static string BuildPreviousLink(UrlHelper urlHelper, QueryOptions queryOptions, string actionName)
@@ -92,7 +88,7 @@ public static class HtmlHelperExtensions
             SortOrder = queryOptions.SortOrder,
             SortField = queryOptions.SortField,
             CurrentPage = queryOptions.CurrentPage - 1,
-            PageSize = queryOptions.PageSize - 1
+            PageSize = queryOptions.PageSize
         }));
     }
 
@@ -105,7 +101,7 @@ public static class HtmlHelperExtensions
             SortOrder = queryOptions.SortOrder,
             SortField = queryOptions.SortField,
             CurrentPage = queryOptions.CurrentPage + 1,
-            PageSize = queryOptions.PageSize + 1
+            PageSize = queryOptions.PageSize
         }));
     }
 }
